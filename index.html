@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      animation: fadeIn 2s ease-in-out;
+    }
+
+    @keyframes fadeIn {
+      from { opacity: 0; }
+      to { opacity: 1; }
+    }
+
+    .timetable {
+      margin: 0 auto;
+      border-style: unset;
+      width: 80%;
+      animation: slideIn 2s ease-out;
+    }
+
+    @keyframes slideIn {
+      from { transform: translateY(20px); opacity: 0; }
+      to { transform: translateY(0); opacity: 1; }
+    }
+
+    .timetable th, .timetable td {
+      border: 1px solid #ddd;
+      padding: 8px;
+      text-align: center;
+      transition: background-color 0.5s ease;
+    }
+
+    .timetable th {
+      background-color: #f2f2f2;
+      color: black;
+      animation: spin 5s;
+    }
+
+    .timetable tr:nth-child(even) {
+      background-color: #f9f9f9;
+    }
+
+    .timetable tr:hover {
+      background-color: #d3d3d3;
+      transition: background-color 0.3s ease-in-out;
+    }
+
+    .timetable td.break {
+      background-color: #ffcccb;
+      color: red;
+    }
+
+    .center {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+    }
+
+    marquee {
+      font-size: 24px;
+      font-weight: bold;
+      margin-bottom: 20px;
+      animation: textSlide 10s infinite linear;
+    }
+
+    @keyframes textSlide {
+      from { transform: translateX(100%); }
+      to { transform: translateX(-100%); }
+    }
+
+    @keyframes spin {
+      from { transform: rotate(0deg); }
+      to { transform: rotate(360deg); }
+    }
+    
+    td[data-subject="Web Design"] { cursor: pointer; }
+    td[data-subject="C#"] { cursor: crosshair; }
+    td[data-subject="DT"] { cursor: help; }
+    td[data-subject="Math"] { cursor: wait; }
+    td[data-subject="QBasic"] { cursor: text; }
+    td[data-subject="Java"] { cursor: move; }
+    td[data-subject="Python"] { cursor: grab; }
+    td[data-subject="Library"] { cursor: alias; }
+    td[data-subject="DSA"] { cursor: progress; }
+  </style>
+</head>
+<body>
+
+<div class="center">
+  <marquee behavior="scroll" direction="left">Class Timetable</marquee>
+  <table class="timetable">
+    <tr>
+      <th>Time</th>
+      <th>Monday</th>
+      <th>Tuesday</th>
+      <th>Wednesday</th>
+      <th>Thursday</th>
+      <th>Friday</th>
+    </tr>
+    <tr>
+      <td>09:00 - 10:00</td>
+      <td data-subject="Web Design">Web Design</td>
+      <td data-subject="C#">C#</td>
+      <td data-subject="DT">DT</td>
+      <td data-subject="Math">Math</td>
+      <td data-subject="QBasic">QBasic</td>
+    </tr>
+    <tr>
+      <td>10:00 - 11:00</td>
+      <td data-subject="Java">Java</td>
+      <td data-subject="Python">Python</td>
+      <td data-subject="C#">C#</td>
+      <td data-subject="Math">Math</td>
+      <td data-subject="Library">Library</td>
+    </tr>
+    <tr>
+      <td>11:00 - 12:00</td>
+      <td data-subject="Java">Java</td>
+      <td data-subject="Math">Math</td>
+      <td data-subject="C#">C#</td>
+      <td data-subject="Java">Java</td>
+      <td data-subject="QBasic">QBasic</td>
+    </tr>
+    <tr>
+      <td>12:00 - 01:00</td>
+      <td class="break" colspan="5">Lunch Break</td>
+    </tr>
+    <tr>
+      <td>01:00 - 02:00</td>
+      <td data-subject="Java">Java</td>
+      <td data-subject="QBasic">QBasic</td>
+      <td data-subject="Math">Math</td>
+      <td data-subject="C#">C#</td>
+      <td data-subject="DSA">DSA</td>
+    </tr>
+    <tr>
+      <td>02:00 - 03:00</td>
+      <td data-subject="DSA">DSA</td>
+      <td data-subject="Math">Math</td>
+      <td data-subject="DT">DT</td>
+      <td data-subject="Web Design">Web Design</td>
+      <td data-subject="C#">C#</td>
+    </tr>
+  </table><br><br>
+  <footer>
+    &copy Harsh Bhatt
+  </footer>
+</div>
+</body>
+</html>
